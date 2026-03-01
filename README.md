@@ -23,7 +23,7 @@ A professional, secure, and fully documented RESTful API built with **Django Res
 
 1. **Clone the Repository**
    ```bash
-   git clone [https://github.com/kanishkaverma26/task_management_app.git](https://github.com/kanishkaverma26/task_management_app.git)
+   git clone https://github.com/kanishkaverma26/Task-Management-App.git
    cd task_management_app
 
 2. **Create a Virtual Environment**
