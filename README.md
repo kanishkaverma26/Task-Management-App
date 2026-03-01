@@ -1,13 +1,50 @@
-📝 Task Management APIA professional, secure, and fully documented RESTful API built with Django Rest Framework (DRF). This application allows users to manage personal tasks while providing administrative oversight and real-time productivity analytics.✨ Key FeaturesUser Ownership: Strict data isolation—users can only see and manage their own tasks.Admin Dashboard: Staff users have full visibility and management capabilities across all tasks.Productivity Analytics: A dedicated /api/tasks/stats/ endpoint providing completion rates and task counts.Interactive Documentation: Fully integrated Swagger UI and Redoc for easy API testing.Advanced Filtering: Built-in support for searching (title/description), ordering (by date), and status filtering.🛠️ Tech StackBackend: Django 5.x & Django Rest Framework (DRF)Database: SQLite (Development)Documentation: drf-spectacular (OpenAPI 3.0)Authentication: Session & Basic Authentication (DRF Defaults)Testing: Python Unittest / APITestCase📥 Installation & Local SetupClone the RepositoryBashgit clone https://github.com/kanishkaverma26/task_management_app.git
-cd task_management_app
-Create a Virtual EnvironmentBashpython -m venv .venv
-# Activate on Windows:
-.venv\Scripts\activate
-# Activate on Mac/Linux:
-source .venv/bin/activate
-Install DependenciesBashpip install -r requirements.txt
-Run Migrations & Start ServerBashpython manage.py migrate
-python manage.py runserver
-📖 API Usage & DocumentationOnce the server is running, navigate to the following URLs to explore the API:Swagger UI: http://127.0.0.1:8000/api/schema/swagger-ui/Redoc: http://127.0.0.1:8000/api/schema/redoc/🚦 Core EndpointsMethodEndpointDescriptionPOST/api/users/Register a new user account.GET/api/tasks/List tasks (Paginated). Filters: ?completed=true, ?search=title, ?ordering=-created_at.POST/api/tasks/Create a new task (automatically assigned to the logged-in user).GET/api/tasks/{id}/Retrieve task details (requires id as integer).PATCH/api/tasks/{id}/Partially update task fields (e.g., mark as completed).DELETE/api/tasks/{id}/Remove a task.GET/api/tasks/stats/View total tasks, completed tasks, and completion percentage.🧪 TestingThe project includes a modular test suite to ensure reliability. Tests are located in the tasks/tests/ directory.To run the full test suite:Bashpython manage.py test
-🛡️ Permission LogicRegular Users: Can List, Create, Retrieve, Update, and Delete only the tasks where created_by == request.user.Admin/Staff: Can view and manage all tasks in the database.Auto-Assignment: The created_by field is read-only and automatically populated based on the authenticated user during task creation.🤝 ContactKanishka VermaGitHub: @kanishkaverma26💡 Final Tip for Kanishka:Before you finish your git push, make sure you run this command:Bashpip freeze > requirements.txt
-This ensures that the requirements.txt file is updated with all the libraries (like drf-spectacular and django-filter) so that anyone who clones your repo can install them easily.
+# 📝 Task Management API
+
+A professional, secure, and fully documented RESTful API built with **Django Rest Framework (DRF)**. This application allows users to manage personal tasks while providing administrative oversight and real-time productivity analytics.
+
+## ✨ Key Features
+* **User Ownership**: Strict data isolation—users can only see and manage their own tasks.
+* **Admin Dashboard**: Staff users have full visibility and management capabilities across all tasks.
+* **Productivity Analytics**: A dedicated `/api/tasks/stats/` endpoint providing completion rates and task counts.
+* **Interactive Documentation**: Fully integrated **Swagger UI** and **Redoc** for easy API testing.
+* **Advanced Filtering**: Built-in support for searching (title/description), ordering (by date), and status filtering.
+
+---
+
+## 🛠️ Tech Stack
+* **Backend**: Django 5.x & Django Rest Framework (DRF)
+* **Database**: SQLite (Development)
+* **Documentation**: `drf-spectacular` (OpenAPI 3.0)
+* **Testing**: Python Unittest / APITestCase
+
+---
+
+## 📥 Installation & Local Setup
+
+1. **Clone the Repository**
+   ```bash
+   git clone [https://github.com/kanishkaverma26/task_management_app.git](https://github.com/kanishkaverma26/task_management_app.git)
+   cd task_management_app
+
+2. **Create a Virtual Environment**
+   ```bash
+     python -m venv .venv
+
+3. **Activate on Windows**
+   ```bash
+    .venv\Scripts\activate
+   
+4. **Install Dependencies**
+   ```bash
+    pip install -r requirements.txt
+   
+5. **Run Migrations & Start Server**
+   ```bash
+    python manage.py migrate
+    python manage.py runserver
+---
+
+## 🧪 Testing
+The project includes a modular test suite. To run all tests:
+   ```bash
+   python manage.py test
