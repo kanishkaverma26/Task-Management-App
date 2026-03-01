@@ -24,7 +24,7 @@ A professional, secure, and fully documented RESTful API built with **Django Res
 1. **Clone the Repository**
    ```bash
    git clone https://github.com/kanishkaverma26/Task-Management-App.git
-   cd task_management_app
+   cd Task-Management-App
 
 2. **Create a Virtual Environment**
    ```bash
@@ -42,6 +42,24 @@ A professional, secure, and fully documented RESTful API built with **Django Res
    ```bash
     python manage.py migrate
     python manage.py runserver
+
+Once the server is running, you can access the interactive API Documentation (Swagger UI) at:
+http://127.0.0.1:8000/api/docs/
+--
+### 👤 Administrative Access
+
+To manage the database directly and view all user tasks, you should create a Superuser:
+
+1. **Create the Superuser:**
+   ```bash
+   python manage.py createsuperuser
+Follow the prompts to set a username, email, and password.
+
+2. **Access the Admin Panel:**
+Once the server is running, navigate to:
+http://127.0.0.1:8000/admin/
+
+Log in with your superuser credentials to manage Users and Tasks directly.
 ---
 
 ## 🧪 Testing
