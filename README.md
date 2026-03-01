@@ -63,6 +63,24 @@ Log in with your superuser credentials to manage Users and Tasks directly.
 ---
 
 ## 🧪 Testing
-The project includes a modular test suite. To run all tests:
+1. The project includes a modular test suite. To run all tests:
    ```bash
    python manage.py test
+
+## 📊 Test Coverage
+To check how much of the code is covered by tests:
+
+1. **Run Coverage:**
+   ```bash
+   coverage run --source='.' manage.py test
+2. **View Report:**
+   ```bash
+   coverage report
+3. **Generate HTML Report:**
+   ```bash
+   coverage html
+Open htmlcov/index.html in your browser to see detailed line-by-line coverage.
+### 🧐 What is a "Good" Progress Rate?
+* **80% - 90%**: Excellent. This is what most professional projects aim for.
+* **100%**: Perfect, but often hard to maintain.
+* **Below 50%**: You should write more tests for your logic, especially for the `IsOwnerOrAdmin` permission.
